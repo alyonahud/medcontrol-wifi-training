@@ -1,0 +1,61 @@
+.footer {
+  position: absolute;
+  z-index: 6;
+  left: 0;
+  bottom: -4px;
+  width: 1440px;
+  height: 72px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 70px;
+  background: rgba(255, 255, 255, 0.7);
+  box-shadow: 2px 0 50.5px rgba(68, 40, 170, 0.15);
+  backdrop-filter: blur(16px);
+}
+
+.button {
+  height: 72px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 11.259px;
+  padding: 18.014px;
+  border: 0;
+  border-radius: 18.014px;
+  background: transparent;
+  cursor: pointer;
+  color: #000000;
+  transition: background 160ms ease, opacity 160ms ease, transform 160ms ease;
+}
+
+.button:hover {
+  background: rgba(255, 255, 255, 0.48);
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button:focus-visible {
+  outline: 2px solid rgba(112, 172, 255, 0.82);
+  outline-offset: -3px;
+}
+
+.muted {
+  opacity: 0.62;
+}
+
+.icon {
+  width: 36.028px;
+  height: 36.028px;
+  object-fit: contain;
+}
+
+.label {
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 20.266px;
+  font-weight: 400;
+  line-height: 18px;
+  white-space: nowrap;
+}

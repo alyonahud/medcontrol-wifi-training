@@ -1,0 +1,44 @@
+.hint {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.title {
+  position: absolute;
+  left: 279px;
+  top: 157px;
+  margin: 0;
+  font-family: HeliosExtC, Montserrat, Arial, sans-serif;
+  font-size: 63px;
+  font-weight: 700;
+  line-height: 70.56px;
+  color: #180553;
+  white-space: nowrap;
+}
+
+.number {
+  position: absolute;
+  left: 925px;
+  top: 326px;
+  margin: 0;
+  font-family: HeliosExtC, Montserrat, Arial, sans-serif;
+  font-size: 240px;
+  font-weight: 700;
+  line-height: 268.8px;
+  color: rgba(255, 255, 255, 0.82);
+}
+
+.text {
+  position: absolute;
+  left: 1054px;
+  top: 345px;
+  width: 312px;
+  margin: 0;
+  font-family: Rawline, Montserrat, Arial, sans-serif;
+  font-size: 26px;
+  font-weight: 700;
+  line-height: 36px;
+  color: #180553;
+}

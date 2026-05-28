@@ -1,0 +1,89 @@
+.phone {
+  position: absolute;
+  left: 552px;
+  top: 252px;
+  z-index: 3;
+}
+
+.image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.target {
+  position: absolute;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.target:focus-visible {
+  outline: 2px solid rgba(112, 172, 255, 0.82);
+  outline-offset: 3px;
+}
+
+.debug {
+  background: transparent;
+  box-shadow: none;
+}
+
+.holdFeedback {
+  position: absolute;
+  inset: -4px;
+  border-radius: 18px;
+  opacity: 0;
+  background: transparent;
+  box-shadow: 0 0 0 0 rgba(255, 194, 224, 0.34);
+  transition: opacity 120ms ease;
+}
+
+.holding {
+  opacity: 1;
+  animation: holdGlow 1.2s ease-in-out infinite;
+}
+
+.progress {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 102px;
+  height: 102px;
+  translate: -50% -50%;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.progressVisible {
+  opacity: 1;
+}
+
+.progressSvg {
+  width: 100%;
+  height: 100%;
+  rotate: -90deg;
+  filter: drop-shadow(0 8px 22px rgba(24, 5, 83, 0.14));
+}
+
+.progressTrack {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.86);
+  stroke-width: 8;
+}
+
+.progressValue {
+  fill: none;
+  stroke: #70acff;
+  stroke-linecap: round;
+  stroke-width: 8;
+}
+
+@keyframes holdGlow {
+  50% {
+    box-shadow: 0 0 0 10px rgba(255, 194, 224, 0.16);
+  }
+}

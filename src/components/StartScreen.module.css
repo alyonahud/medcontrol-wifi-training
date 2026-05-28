@@ -1,0 +1,88 @@
+.screen {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+.title {
+  position: absolute;
+  left: 72px;
+  top: 318px;
+  margin: 0;
+  font-family: HeliosExtC, Montserrat, Arial, sans-serif;
+  font-size: 84px;
+  font-weight: 700;
+  line-height: 0.93;
+  color: transparent;
+  background: linear-gradient(137.588deg, #bc8cfc 14.482%, #70acff 86.251%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  white-space: nowrap;
+}
+
+.actions {
+  position: absolute;
+  left: 72px;
+  top: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.button {
+  height: 84px;
+  padding: 24px 32px;
+  border: 0;
+  border-radius: 24px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-family: Montserrat, Arial, sans-serif;
+  font-size: 40px;
+  font-weight: 400;
+  line-height: 36px;
+  cursor: pointer;
+  transition: transform 180ms ease, box-shadow 180ms ease, opacity 180ms ease;
+}
+
+.button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 38px rgba(45, 114, 210, 0.18);
+}
+
+.button:active {
+  transform: translateY(1px);
+  opacity: 0.92;
+}
+
+.button:focus-visible {
+  outline: 3px solid rgba(112, 172, 255, 0.78);
+  outline-offset: 4px;
+}
+
+.primary {
+  width: 409px;
+  color: #ffffff;
+  background: linear-gradient(173.525deg, #7846bc 5.129%, #2d72d2 90.535%);
+}
+
+.secondary {
+  width: 473px;
+  color: #000000;
+  background: #ffffff;
+}
+
+.characterMask {
+  position: absolute;
+  left: 803px;
+  top: 219px;
+  width: 637px;
+  height: 805px;
+}
+
+.character {
+  display: block;
+  width: 637px;
+  height: 805px;
+  object-fit: contain;
+}

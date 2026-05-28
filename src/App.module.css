@@ -1,0 +1,59 @@
+.shell {
+  width: 100vw;
+  height: 100vh;
+  display: grid;
+  place-items: center;
+  overflow: hidden;
+  background:
+    linear-gradient(97.989deg, rgba(211, 189, 241, 0.6) 46.723%, rgba(147, 184, 236, 0.6) 97.267%),
+    #ffffff;
+}
+
+.frame {
+  width: calc(1440px * var(--scale));
+  height: calc(1024px * var(--scale));
+  position: relative;
+}
+
+.stage {
+  width: 1440px;
+  height: 1024px;
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  transform: scale(var(--scale));
+  transform-origin: top left;
+  background:
+    linear-gradient(97.989deg, rgba(211, 189, 241, 0.6) 46.723%, rgba(147, 184, 236, 0.6) 97.267%),
+    #ffffff;
+}
+
+.stage::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-image:
+    linear-gradient(rgba(177, 174, 222, 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(177, 174, 222, 0.3) 1px, transparent 1px);
+  background-size: 48px 48px;
+  opacity: 0.64;
+}
+
+.stage::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 165px;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.56));
+  pointer-events: none;
+}
+
+.content {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}

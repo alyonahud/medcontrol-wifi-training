@@ -1,0 +1,60 @@
+.screen {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+}
+
+.navButton {
+  position: absolute;
+  top: 854px;
+  z-index: 5;
+  width: 64px;
+  height: 64px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 14px 34px rgba(68, 40, 170, 0.14);
+  cursor: pointer;
+  transition: transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.navButton::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 18px;
+  height: 18px;
+  border-top: 4px solid #180553;
+  border-right: 4px solid #180553;
+}
+
+.navButton:hover {
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 18px 42px rgba(68, 40, 170, 0.2);
+}
+
+.navButton:active {
+  transform: translateY(1px);
+}
+
+.navButton:focus-visible {
+  outline: 3px solid rgba(112, 172, 255, 0.78);
+  outline-offset: 4px;
+}
+
+.navPrevious {
+  left: 464px;
+}
+
+.navPrevious::before {
+  transform: translate(-35%, -50%) rotate(-135deg);
+}
+
+.navNext {
+  left: 912px;
+}
+
+.navNext::before {
+  transform: translate(-65%, -50%) rotate(45deg);
+}

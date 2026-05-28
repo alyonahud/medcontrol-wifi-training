@@ -1,0 +1,447 @@
+.shell {
+  position: relative;
+  width: 100vw;
+  height: 100dvh;
+  min-height: 620px;
+  overflow: hidden;
+  background:
+    linear-gradient(97.989deg, rgba(211, 189, 241, 0.6) 46.723%, rgba(147, 184, 236, 0.6) 97.267%),
+    #ffffff;
+  color: #180553;
+}
+
+.shell::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(177, 174, 222, 0.28) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(177, 174, 222, 0.28) 1px, transparent 1px);
+  background-size: 34px 34px;
+  opacity: 0.68;
+}
+
+.header {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 18px 18px 0;
+}
+
+.logo {
+  width: 168px;
+  height: auto;
+  display: block;
+}
+
+.subtitle {
+  margin: 5px 0 0 28px;
+  font-size: 10px;
+  line-height: 1.25;
+  color: #000000;
+}
+
+.support {
+  padding-top: 2px;
+  text-align: right;
+  color: #000000;
+}
+
+.supportLabel {
+  margin: 0;
+  font-size: 10px;
+  line-height: 1.2;
+}
+
+.supportPhone {
+  margin: 2px 0 0;
+  font-size: 15px;
+  line-height: 1.2;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.main {
+  position: relative;
+  z-index: 2;
+  height: calc(100dvh - 78px);
+  min-height: 542px;
+}
+
+.start {
+  position: relative;
+  height: 100%;
+  padding: 54px 28px 0;
+}
+
+.startTitle {
+  margin: 0;
+  width: min(100%, 374px);
+  font-family: HeliosExtC, Montserrat, Arial, sans-serif;
+  font-size: clamp(34px, 10.8vw, 50px);
+  line-height: 1.02;
+  font-weight: 700;
+  color: transparent;
+  background: linear-gradient(137.588deg, #bc8cfc 14.482%, #70acff 86.251%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  overflow-wrap: normal;
+  word-break: keep-all;
+}
+
+.startActions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  margin-top: 34px;
+}
+
+.startButton {
+  min-width: min(100%, 306px);
+  min-height: 60px;
+  padding: 15px 22px;
+  border: 0;
+  border-radius: 20px;
+  font-size: 25px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.primaryButton {
+  color: #ffffff;
+  background: linear-gradient(173.525deg, #7846bc 5.129%, #2d72d2 90.535%);
+  box-shadow: 0 16px 34px rgba(45, 114, 210, 0.2);
+}
+
+.secondaryButton {
+  color: #000000;
+  background: rgba(255, 255, 255, 0.94);
+}
+
+.character {
+  position: absolute;
+  right: -78px;
+  bottom: -36px;
+  width: min(82vw, 354px);
+  max-height: 54dvh;
+  object-fit: contain;
+}
+
+.training {
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr) auto;
+  height: 100%;
+  padding: 20px 18px 82px;
+}
+
+.trainingTop {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.instructionRow {
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  align-items: center;
+  gap: 12px;
+}
+
+.stepNumber {
+  font-family: HeliosExtC, Montserrat, Arial, sans-serif;
+  font-size: 72px;
+  line-height: 0.78;
+  font-weight: 700;
+  text-align: right;
+  color: rgba(255, 255, 255, 0.84);
+}
+
+.instructionTitle {
+  margin: 0;
+  font-family: HeliosExtC, Montserrat, Arial, sans-serif;
+  font-size: 28px;
+  line-height: 1.05;
+  font-weight: 700;
+  text-align: center;
+}
+
+.instructionText {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.22;
+  font-weight: 700;
+}
+
+.phoneArea {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 0;
+  padding: 10px 0;
+}
+
+.phoneFrame {
+  position: relative;
+  width: min(73vw, 286px, calc((100dvh - 292px) * 0.505));
+  max-height: calc(100dvh - 292px);
+  aspect-ratio: var(--phone-ratio);
+}
+
+.phoneImage {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  user-select: none;
+  -webkit-user-drag: none;
+}
+
+.target {
+  position: absolute;
+  border: 0;
+  padding: 0;
+  background: transparent;
+  cursor: pointer;
+  touch-action: none;
+}
+
+.targetDebug {
+  box-shadow: none;
+}
+
+.holdProgress {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 76px;
+  height: 76px;
+  translate: -50% -50%;
+  opacity: 0;
+  transition: opacity 120ms ease;
+}
+
+.holdProgressVisible {
+  opacity: 1;
+}
+
+.holdProgressSvg {
+  width: 100%;
+  height: 100%;
+  rotate: -90deg;
+}
+
+.holdProgressTrack {
+  fill: none;
+  stroke: rgba(255, 255, 255, 0.88);
+  stroke-width: 8;
+}
+
+.holdProgressValue {
+  fill: none;
+  stroke: #70acff;
+  stroke-linecap: round;
+  stroke-width: 8;
+}
+
+.mobileHand {
+  position: absolute;
+  z-index: 3;
+  width: 60%;
+  pointer-events: none;
+  transform-origin: center;
+  isolation: isolate;
+}
+
+.mobileHand img {
+  position: relative;
+  z-index: 2;
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.mobileHandHold {
+  left: 43%;
+  top: 40%;
+  animation: mobileHoldPress 1.9s ease-in-out infinite;
+}
+
+.mobileHandHold::after {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  left: 7.5%;
+  top: 0.5%;
+  width: 13%;
+  aspect-ratio: 1;
+  border: 2px solid rgba(238, 74, 149, 0.72);
+  border-radius: 50%;
+  background: rgba(238, 74, 149, 0.06);
+  animation: mobileHoldPulse 1.9s ease-in-out infinite;
+}
+
+.mobileHandTap {
+  left: 56%;
+  top: -6%;
+  transform: rotate(180deg) scaleY(-1);
+  animation: mobileTapPress 1.35s ease-in-out infinite;
+}
+
+.mobileHandExit {
+  left: 33%;
+  top: 3%;
+}
+
+.mobileHandConfirm {
+  left: -8%;
+  top: 69%;
+}
+
+.navigation {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+  padding: 2px 0 10px;
+}
+
+.navButton {
+  position: relative;
+  width: 58px;
+  height: 58px;
+  border: 0;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 14px 34px rgba(68, 40, 170, 0.14);
+  cursor: pointer;
+}
+
+.navButton::before {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 16px;
+  height: 16px;
+  border-top: 4px solid #180553;
+  border-right: 4px solid #180553;
+}
+
+.navPrevious::before {
+  transform: translate(-34%, -50%) rotate(-135deg);
+}
+
+.navNext::before {
+  transform: translate(-66%, -50%) rotate(45deg);
+}
+
+.footer {
+  position: absolute;
+  z-index: 4;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 70px;
+  padding: 10px 18px calc(10px + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 2px 0 50.5px rgba(68, 40, 170, 0.15);
+  backdrop-filter: blur(16px);
+}
+
+.footerButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  border: 0;
+  background: transparent;
+  color: #000000;
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.footerIcon {
+  width: 28px;
+  height: 28px;
+}
+
+.complete {
+  display: grid;
+  place-items: center;
+  height: 100%;
+  padding: 0 18px 74px;
+}
+
+.completePanel {
+  width: min(100%, 358px);
+  padding: 38px 24px 30px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 2px 0 50.5px rgba(68, 40, 170, 0.15);
+  text-align: center;
+}
+
+.completeTitle {
+  margin: 0 0 14px;
+  font-family: HeliosExtC, Montserrat, Arial, sans-serif;
+  font-size: 44px;
+  line-height: 1;
+}
+
+.completeText {
+  margin: 0 0 26px;
+  font-size: 22px;
+  line-height: 1.25;
+}
+
+.completeActions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.completeButton {
+  min-height: 58px;
+  border: 0;
+  border-radius: 20px;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@keyframes mobileHoldPress {
+  50% {
+    translate: 6px 8px;
+    scale: 0.985;
+  }
+}
+
+@keyframes mobileTapPress {
+  50% {
+    translate: 8px 10px;
+  }
+}
+
+@keyframes mobileHoldPulse {
+  0%,
+  100% {
+    opacity: 0;
+    scale: 0.55;
+  }
+
+  44% {
+    opacity: 0.82;
+    scale: 1;
+  }
+
+  72% {
+    opacity: 0;
+    scale: 1.35;
+  }
+}

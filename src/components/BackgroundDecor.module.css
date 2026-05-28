@@ -1,0 +1,69 @@
+.decor {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.ellipseOne,
+.ellipseTwo {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.78;
+}
+
+.ellipseOne {
+  width: 1617px;
+  height: 1617px;
+  left: -698px;
+  top: -992px;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.62) 0%, rgba(255, 255, 255, 0) 68%);
+  filter: blur(36px);
+}
+
+.ellipseTwo {
+  width: 2025px;
+  height: 2025px;
+  left: -1062px;
+  top: -1275px;
+  background: radial-gradient(circle, rgba(243, 232, 255, 0.72) 0%, rgba(243, 232, 255, 0) 72%);
+  filter: blur(28px);
+}
+
+.training .ellipseOne {
+  left: -577px;
+  top: -1134px;
+}
+
+.training .ellipseTwo {
+  left: -966px;
+  top: -1401px;
+}
+
+.watermark {
+  position: absolute;
+  width: 1428px;
+  height: auto;
+  opacity: 0.5;
+  filter: blur(21.932px);
+}
+
+.watermarkPrimary {
+  left: 180px;
+  top: 801px;
+}
+
+.watermarkSecondary {
+  left: -574px;
+  top: 597px;
+  opacity: 0.3;
+  filter: blur(17.409px);
+}
+
+.training .watermarkPrimary {
+  top: 731px;
+}
+
+.training .watermarkSecondary {
+  top: 527px;
+}
