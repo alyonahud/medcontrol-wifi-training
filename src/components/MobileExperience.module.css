@@ -8,6 +8,9 @@
     linear-gradient(97.989deg, rgba(211, 189, 241, 0.6) 46.723%, rgba(147, 184, 236, 0.6) 97.267%),
     #ffffff;
   color: #180553;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
 }
 
 .shell::before {
@@ -73,8 +76,17 @@
 
 .start {
   position: relative;
+  display: grid;
+  grid-template-rows: auto minmax(0, 1fr);
+  gap: clamp(18px, 4.4dvh, 44px);
   height: 100%;
-  padding: 54px 28px 0;
+  padding: clamp(28px, 5.8dvh, 54px) 28px 0;
+  overflow: hidden;
+}
+
+.startContent {
+  position: relative;
+  z-index: 2;
 }
 
 .startTitle {
@@ -123,12 +135,14 @@
 }
 
 .character {
-  position: absolute;
-  right: -78px;
-  bottom: -36px;
-  width: min(82vw, 354px);
-  max-height: 54dvh;
+  align-self: end;
+  justify-self: end;
+  width: min(82vw, 354px, calc((100dvh - 420px) * 0.76));
+  max-height: 100%;
   object-fit: contain;
+  object-position: right bottom;
+  margin-right: -78px;
+  margin-bottom: -36px;
 }
 
 .training {
@@ -181,7 +195,9 @@
   display: grid;
   place-items: center;
   min-height: 0;
-  padding: 10px 0;
+  width: min(100%, 414px);
+  justify-self: center;
+  padding: 10px 58px;
 }
 
 .phoneFrame {
@@ -189,6 +205,8 @@
   width: min(73vw, 286px, calc((100dvh - 292px) * 0.505));
   max-height: calc(100dvh - 292px);
   aspect-ratio: var(--phone-ratio);
+  user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .phoneImage {
@@ -198,7 +216,9 @@
   height: 100%;
   object-fit: contain;
   user-select: none;
+  pointer-events: none;
   -webkit-user-drag: none;
+  -webkit-touch-callout: none;
 }
 
 .target {
@@ -303,15 +323,15 @@
 }
 
 .navigation {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 26px;
-  padding: 2px 0 10px;
+  position: absolute;
+  z-index: 5;
+  inset: 10px 0;
+  pointer-events: none;
 }
 
 .navButton {
-  position: relative;
+  position: absolute;
+  top: 50%;
   width: 58px;
   height: 58px;
   border: 0;
@@ -319,6 +339,7 @@
   background: rgba(255, 255, 255, 0.78);
   box-shadow: 0 14px 34px rgba(68, 40, 170, 0.14);
   cursor: pointer;
+  pointer-events: auto;
 }
 
 .navButton::before {
@@ -336,8 +357,18 @@
   transform: translate(-34%, -50%) rotate(-135deg);
 }
 
+.navPrevious {
+  left: 0;
+  translate: 0 -50%;
+}
+
 .navNext::before {
   transform: translate(-66%, -50%) rotate(45deg);
+}
+
+.navNext {
+  right: 0;
+  translate: 0 -50%;
 }
 
 .footer {

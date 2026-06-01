@@ -64,22 +64,24 @@ function MobileStart({
 }: Pick<MobileExperienceProps, 'onInstructionClick' | 'onStart'>) {
   return (
     <section className={styles.start} aria-label="Подключение к Wi-Fi">
-      <h1 className={styles.startTitle}>
-        Подключение
-        <br />
-        к Wi-Fi
-      </h1>
-      <div className={styles.startActions}>
-        <button className={`${styles.startButton} ${styles.primaryButton}`} type="button" onClick={onStart}>
-          Пойти обучение
-        </button>
-        <button
-          className={`${styles.startButton} ${styles.secondaryButton}`}
-          type="button"
-          onClick={onInstructionClick}
-        >
-          Читать инструкцию
-        </button>
+      <div className={styles.startContent}>
+        <h1 className={styles.startTitle}>
+          Подключение
+          <br />
+          к Wi-Fi
+        </h1>
+        <div className={styles.startActions}>
+          <button className={`${styles.startButton} ${styles.primaryButton}`} type="button" onClick={onStart}>
+            Пойти обучение
+          </button>
+          <button
+            className={`${styles.startButton} ${styles.secondaryButton}`}
+            type="button"
+            onClick={onInstructionClick}
+          >
+            Читать инструкцию
+          </button>
+        </div>
       </div>
       <img className={styles.character} src={character} alt="" aria-hidden="true" />
     </section>
@@ -210,21 +212,21 @@ function MobileTraining({
           onTap={step.action === 'tap' ? onStepComplete : undefined}
           step={step}
         />
+        <nav className={styles.navigation} aria-label="Навигация по экранам инструкции">
+          <button
+            className={`${styles.navButton} ${styles.navPrevious}`}
+            type="button"
+            onClick={onPreviousStep}
+            aria-label="Предыдущий экран инструкции"
+          />
+          <button
+            className={`${styles.navButton} ${styles.navNext}`}
+            type="button"
+            onClick={onNextStep}
+            aria-label="Следующий экран инструкции"
+          />
+        </nav>
       </div>
-      <nav className={styles.navigation} aria-label="Навигация по экранам инструкции">
-        <button
-          className={`${styles.navButton} ${styles.navPrevious}`}
-          type="button"
-          onClick={onPreviousStep}
-          aria-label="Предыдущий экран инструкции"
-        />
-        <button
-          className={`${styles.navButton} ${styles.navNext}`}
-          type="button"
-          onClick={onNextStep}
-          aria-label="Следующий экран инструкции"
-        />
-      </nav>
     </section>
   );
 }
